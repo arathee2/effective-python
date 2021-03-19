@@ -1,0 +1,12 @@
+# prefer interpolated format strings
+name = "Amandeep"
+age = 25
+multiline_message = f'{name} loves food. See {name} cook.'
+                    f'{name:^20s}: {age:,.2f}'
+
+
+# ''.format() is obsolete but good to know
+name = 'Amandeep'
+'{0} loves food. See {0} cook.'.format(name)
+'{0:,^20s}: {1:.2f}'.format(key, value)
+'{name:,^20s}: {age:.2f}'.format(name=key, age=value)

@@ -1,0 +1,5 @@
+# python version
+# `python3 --version` on the command line
+import sys
+print(sys.version_info)
+print(sys.version)

@@ -1,0 +1,2 @@
+Prefer helper functions over complicated concise statements.
+if/else conditional expressions are better than Boolean or/and.
