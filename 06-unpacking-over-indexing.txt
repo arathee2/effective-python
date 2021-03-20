@@ -1,0 +1,6 @@
+words = ('hello', 'world')
+hello, world = words  # unpacking
+
+items = [('bread', 5), ('juice', 8), ('soup', 12)]
+for item, price in items:  # unpacking
+    print(f'{item} costs {price}')

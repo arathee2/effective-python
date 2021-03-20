@@ -1,0 +1,12 @@
+items = ['apple', 'banana', 'orange']
+prices = [10, 12, 15]
+for item, price in zip(items, prices):
+    print(f'{item}: {price}')
+
+items.append(''mango')
+for item, price in zip(items, prices):  # zip stops producing output when the shortest iterable ends
+    print(f'{item}: {price}')
+
+import itertools
+for item, price in itertools.zip_longest(items, prices):  # also prints `mango: None`
+    print(f'{item}: {price}')

@@ -1,0 +1,5 @@
+# Avoid for-else and while-else blocks
+for ...:
+    # code
+else:
+    # code executed if no code in for block did not encounter a break statement

@@ -1,0 +1,26 @@
+a = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+
+a[:]      # ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+a[:5]     # ['a', 'b', 'c', 'd', 'e']
+a[:-1]    # ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+a[4:]     #                     ['e', 'f', 'g', 'h']
+a[-3:]    #                          ['f', 'g', 'h']
+a[2:5]    #           ['c', 'd', 'e']
+a[2:-1]   #           ['c', 'd', 'e', 'f', 'g']
+a[-3:-1]  #                          ['f', 'g']
+
+# slicing is forgiving of boundaries
+a[20]                        # error!
+a[-20]                       # error!
+first_twenty_items = a[:20]  # no errors even though list has 8 elements
+last_twenty_items = a[-20:]  # no errors even though list has 8 elements
+
+# b is a shallow copy of a
+b = a[:]
+
+# b is a pointer to list a
+b = a
+
+# when slice size mismatches with the other side of the assignment
+a[2:7] = [99, 22, 14]        # assigns the list to indices 2, 3 and 4
+a[2:3] = [47, 11]            # extends the list by assigning the list at index 2 and shifting everything else to the right by one element

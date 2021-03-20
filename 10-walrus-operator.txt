@@ -1,0 +1,8 @@
+# Better (because of brevity): count is assigned a value, and then if evaluates count
+if count := get_count():
+    set_count(count + 1)
+
+# Worse
+count = get_count()
+if count:
+    set_count(count + 1)
