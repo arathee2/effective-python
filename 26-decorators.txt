@@ -1,0 +1,31 @@
+# defining decorator
+def trace(func):
+	"""A wrapper to print function arguments and to return function value"""
+	def wrapper(*args, **kwargs):
+		...
+	return wrapper
+
+# using decorator the way they are supposed to be used
+@trace
+def fibonacci(n):
+	"""Return the n-th Fibonacci number"""
+	if n in (0, 1):
+		return n
+	return (fibonacci(n - 2) + fibonacci(n - 1))
+
+fibonacci(4)
+
+# what decorators actually do behind the scenes
+fibonacci = trace(fibonacci)
+fibonacci(4)     # fibonacci(4) thinks it is the fibonacci() function but it is actually trace().
+
+# avoiding the above problem using wraps. Now function metadata such as docstring are copied to the wrapped function as well
+from functools import wraps
+def trace(func):
+	"""A wrapper to print function arguments and to return function value"""
+	@wraps(func)
+	def wrapper(*args, **kwargs):
+		...
+	return wrapper
+
+fibonacci(4)

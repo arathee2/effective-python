@@ -1,0 +1,1 @@
+Since Python 3.5, dict returns its elements in the order in which they were inserted. Before Python 3.5, items were returned randomly regardless of the insertion order.

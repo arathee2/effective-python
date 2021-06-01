@@ -1,0 +1,20 @@
+# using keyword arguments
+def my_func(name, age):
+	...
+	return ...
+
+my_func(name="Amandeep", age=25)
+my_func(age=25, name="Amandeep")
+my_func("Amandeep", age=25)
+my_func(name="Amandeep", 25)      # invalid: keyword arguments must follow positional arguments
+
+# using dictionary
+parameters = {'name': "Amandeep", age=25}
+my_func(parameters)
+
+# allowing keyword arguments in function definition
+def my_func(**):
+	...
+	return ...
+
+my_func(name="Amandeep", age=25)

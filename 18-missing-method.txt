@@ -1,0 +1,10 @@
+You can define your own dict subclass with a __missing__ method in order to construct default values that must know which key was being accessed.
+
+class Pictures(dict):
+	def __missing__(self, key):
+		value = open_picture(key)
+		self[key] = value
+		return value
+
+pictures = Pictures()
+handle = pictures[path]  # path is not a key, so it is created

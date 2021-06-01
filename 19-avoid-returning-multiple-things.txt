@@ -1,0 +1,10 @@
+# bad: error-prone and hurts readability
+minimum, maximum, average, median, count = get_stats(numbers)
+
+# better: return a light-weight class instead
+stats = get_stats(numbers)
+print(stats.get_minimum())
+print(stats.get_maximum())
+print(stats.get_average())
+print(stats.get_median())
+print(stats.get_count())

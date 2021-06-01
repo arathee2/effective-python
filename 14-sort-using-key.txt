@@ -1,0 +1,12 @@
+my_iterable.sort(key = lambda item: item.parameter)
+
+# sort based on one key
+people = [('Harry', 40), ('Sam', 25)]
+people.sort(key = lambda person: person[0])                 # sort according to name
+people.sort(key = lambda person: person[1])                 # sort according to age
+
+# sort based on multiple keys
+people.sort(key = lambda person: (person[0], person[1])     # names and ages both in ascending order
+
+people.sort(key = lambda person: person[0], reverse=False)  # names in ascending order
+people.sort(key = lambda person: person[1], reverse=True)   # ages in descending order

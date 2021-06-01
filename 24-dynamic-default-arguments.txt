@@ -1,0 +1,18 @@
+# default arguments are loaded once at the time of loading the module
+from datetime import datetime
+def log(message, when=datetime.now()):
+    print(f'{when}: {message}')
+
+log("Hello")  
+sleep(3)
+log("Hi")     # both messages will have the same timestamp
+
+# use None as default argument
+def log(message, when=None):
+    if when is None:
+        when = datetime.now()
+    print(f'{when}: {message}')
+
+log("Hello")  
+sleep(3)
+log("Hi")     # both messages will have different timestamps

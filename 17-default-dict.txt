@@ -1,0 +1,4 @@
+# use defaultdict over dict when using a dictionary with arbitrary keys
+from collections import defaultdict
+data = defaultdict(set)
+data[country].add(city)    # if key does not exist, default value would be empty set unlike dict which would throw an error

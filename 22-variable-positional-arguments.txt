@@ -1,0 +1,8 @@
+def my_function(x, *y):
+	...
+	return
+
+my_function(3, 4, 5)       # x = 3, y = (4, 5)
+
+items = [1, 2, 3, 4]
+my_function(0, *items)     # x = 0, y = (1, 2, 3, 4)

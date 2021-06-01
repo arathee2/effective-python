@@ -1,0 +1,13 @@
+# bad
+def my_func():
+	if ...:
+		return ...
+	else:
+		return None
+
+# better
+def my_func():
+	if ...:
+		return ...
+	else:
+		raise ValueError()

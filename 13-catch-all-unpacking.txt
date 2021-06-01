@@ -1,0 +1,19 @@
+# simple unpacking
+x = [1, 2]
+one, two = x
+
+# unpacking using slicing is error-prone
+numbers = [0, 1, 2, 3, 4, 5]
+zero = numbers[0]
+one = numbers[1]
+others = numbers[2:]
+
+# catch all unpacking over error-prone slicing
+zero, one, *others = numbers              # others = [2, 3, 4, 5]
+*others, three, four, five = numbers      # others = [0, 1]
+zero, *others, four, five = numbers       # others = [1, 2, 3]
+a, b, c, d, e, f, *others = numbers       # others = []
+
+# error
+*others = numbers
+zero, *early_middle, num, *last = numbers

@@ -1,0 +1,13 @@
+Use the nonlocal statement to indicate when a closure can modify a
+variable in its enclosing scopes.
+
+def sort_priority3(numbers, group):
+	found = False
+	def helper(x):
+		nonlocal found
+		if x in group:
+			found = True  # without nonlocal, this would be a new variable inside helper(x)
+			return (0, x)
+		return (1, x)
+	numbers.sort(key=helper)
+	return found
