@@ -1,0 +1,9 @@
+# prefer this
+found = {name: result 
+		 for name in order
+		 if (result := get_batches(stock.get(name, 0), 8))}
+
+# over this
+found = {name: get_batches(stock.get(name, 0), 8)
+		 for name in order
+		 if get_batches(stock.get(name, 0), 8)}
